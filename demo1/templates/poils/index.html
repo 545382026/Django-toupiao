@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题页</title>
+</head>
+<body>
+    <div class="ques">
+        <h3>问题页</h3>
+        <ul>
+            {% for q in que %}
+{#            <li><a href="/poils/choice/{{ q.id }}">{{ q.question }}</a></li>#}
+            <li><a href="{% url 'poils:choice'  q.id %}">{{ q.question }}</a></li>
+            {% empty %}
+            <h3>没有此问题</h3>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'poils:result' %}">进入投票结果页</a>
+    </div>
+</body>
+</html>

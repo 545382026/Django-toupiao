@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票结果页</title>
+</head>
+<body>
+    <div class="choice">
+        <h3>{{ que.question }}</h3>
+        <ul>
+            {% for ch in que.choices_set.all %}
+            <li>{{ ch.choice }}--{{ ch.num }}</li>
+            {% empty %}
+            <h3>没有投票</h3>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'poils:index' %}">返回首页</a>
+    </div>
+</body>
+</html>

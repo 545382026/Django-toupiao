@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="choice">
+
+        <h3>{{ ques.question }}</h3>
+        <form action="{% url 'poils:choicehand'    %}" method="post">
+            <ul>
+               {% for ch in ques.choices_set.all %}
+                    <li>{{ ch.choice }}:<input type="radio" value="{{ ch.id }}" name="chid"></li>
+               {% endfor %}
+            </ul>
+            <input type="hidden" value="{{ ques.id }}" name='id'>
+            <input type="submit" value="投票">
+        </form>
+        <a href="{% url 'poils:index' %}">返回</a>
+    </div>
+</body>
+</html>
