@@ -5,6 +5,9 @@
     <title>问题页</title>
 </head>
 <body>
+    <h2>当前用户: {{ request.user }}</h2>
+    <br>
+    <a href="{% url 'poils:loginout' %}">退出登录</a>
     <div class="ques">
         <h3>问题页</h3>
         <ul>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Questions, Choices
+from .models import Questions, Choices, MyUser
 # Register your models here.
 
 class ChoiceInline(admin.StackedInline):
@@ -20,3 +20,5 @@ class ChoiceAdmin(admin.ModelAdmin):
     search_fields = ['choice']
 
 admin.site.register(Choices, ChoiceAdmin)
+
+admin.site.register(MyUser)
